@@ -76,6 +76,7 @@ $(function() {
           $('<div>').text(response.first_name).appendTo('#show-contact-by-id-results');
           $('<div>').text(response.last_name).appendTo('#show-contact-by-id-results');
           $('<div>').text(response.email).appendTo('#show-contact-by-id-results');
+          $('<button>').text('Delete This Contact').attr('id', response.id).addClass('btn-delete').appendTo('#show-contact-by-id-results');
         }
       }
     });
@@ -103,6 +104,7 @@ $(function() {
           $('<div>').text(response[i].first_name).appendTo('#search-contacts-results');
           $('<div>').text(response[i].last_name).appendTo('#search-contacts-results');
           $('<div>').text(response[i].email).appendTo('#search-contacts-results');
+          $('<button>').text('Delete This Contact').attr('id', response[i].id).addClass('btn-delete').appendTo('#search-contacts-results');
           $('<hr>').appendTo('#search-contacts-results');
         }
       }
