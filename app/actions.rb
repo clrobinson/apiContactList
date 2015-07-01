@@ -12,7 +12,13 @@ post '/api/contacts' do
   new_contact = Contact.new(first_name: params["first_name"], last_name: params["last_name"], email: params["email"])
   if new_contact.save
     new_contact.to_json
-  else
-    {error_message: "Something went wrong."}.to_json
+  end
+end
+
+post '/api/contact/search-by-id' do
+  begin
+    Contact.find(params["id"].to_i).to_json
+  rescue ActiveRecord::RecordNotFound
+    {error_message: "Contact could not be found"}.to_json
   end
 end
