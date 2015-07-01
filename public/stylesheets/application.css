@@ -3,14 +3,23 @@
   margin: auto;
 }
 
-.contact-input {
+#ui-button-container {}
+
+#btn-new-contact {}
+#btn-new-contact-submit {}
+#btn-show-all-contacts {}
+#btn-show-contacts-by-id {}
+#btn-search-contacts {}
+
+.start-hidden {
+  display: none;
+}
+
+#new-contact-container {}
+#show-all-contacts-container {}
+#show-contact-by-id-container {}
+#search-contacts-container {}
+
+.new-contact-input {
   width: 300px;
-}
-
-#contact-list {
-  //
-}
-
-.contact-list-entry {
-  //
 }

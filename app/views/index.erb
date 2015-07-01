@@ -1,21 +1,40 @@
 <div id="main-container">
   <h1>Yet Another Contact List App (YACLA)</h1>
-  <div class="new-contact">
-    <p>Make a New Contact</p>
-    <form>
-      <label>First Name</label><br>
-      <input type="text" class="contact-input" name="first_name" id="first-name"></input><br><br>
-      <label>Last Name</label><br>
-      <input type="text" class="contact-input" name="last_name" id="last-name"></input><br><br>
-      <label>Email Address</label><br>
-      <input type="text" class="contact-input" name="email" id="email"></input><br><br>
-      <button type="submit" name="submit" id="submit">Submit</button><br><br>
-    </form>
+  
+  <div id="ui-button-container">
+    <button id="btn-new-contact">Make New Contact</button>
+    <button id="btn-show-all-contacts">Show All Contacts</button>
+    <button id="btn-show-contact-by-id">Show Contact by ID</button>
+    <button id="btn-search-contacts">Search Contacts</button>
   </div>
-  <hr>
+
+  <div id="new-contact-container" class="start-hidden">
+    <p>Make a New Contact</p>
+    <label>First Name</label><br>
+    <input type="text" class="new-contact-input" name="first_name" id="first-name"></input><br><br>
+    <label>Last Name</label><br>
+    <input type="text" class="new-contact-input" name="last_name" id="last-name"></input><br><br>
+    <label>Email Address</label><br>
+    <input type="text" class="new-contact-input" name="email" id="email"></input><br><br>
+    <button id="btn-new-contact-submit">Submit</button><br><br>
+    <div id="new-contact-result"></div>
+  </div>
+
+  <div id="show-all-contacts-container" class="start-hidden">
+  <p>Show All Contacts</p>
+  </div>
+
+  <div id="show-contact-by-id-container" class="start-hidden">
+    <p>Show Contact by ID</p>
+  </div>
+
+  <div id="search-contacts-container" class="start-hidden">
+    <p>Search Contacts</p>
+  </div>
+
+  <!-- <hr>
   <div id="contact-list">
     <div class="contact-list-entry">
-      Entry
     </div>
-  </div>
+  </div> -->
 </div>
