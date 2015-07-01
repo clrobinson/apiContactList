@@ -1,5 +1,5 @@
 <div id="main-container">
-  <h1>Yet Another Contact List App (YACLA)</h1>
+  <h1>Yet Another Contact List App</h1>
   
   <div id="ui-button-container">
     <button id="btn-new-contact">Make New Contact</button>
@@ -33,7 +33,13 @@
   </div>
 
   <div id="search-contacts-container" class="start-hidden">
-    <p>Search Contacts</p>
+    <div id="search-contacts-prompt">
+      <label>Search</label><br>
+      <input id="search-contacts-string"></input>
+      <button id="btn-search-contacts-submit">Search</button>
+    </div>
+    <div id="search-contacts-results">
+    </div>
   </div>
 
   <!-- <hr>

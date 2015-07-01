@@ -8,7 +8,6 @@ get '/api/contacts' do
 end
 
 post '/api/contacts' do
-  # binding.pry
   new_contact = Contact.new(first_name: params["first_name"], last_name: params["last_name"], email: params["email"])
   if new_contact.save
     new_contact.to_json
@@ -22,3 +21,14 @@ post '/api/contact/search-by-id' do
     {error_message: "Contact could not be found"}.to_json
   end
 end
+
+post '/api/contact/search' do
+  array = []
+  search_string = '%' + params["string"] + '%'
+  array << Contact.where("first_name LIKE ?", search_string)
+  array << Contact.where("last_name LIKE ?", search_string)
+  array << Contact.where("email LIKE ?", search_string)
+  array.flatten.uniq.to_json
+end
+
+

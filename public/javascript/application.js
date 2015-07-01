@@ -85,4 +85,25 @@ $(function() {
     $('#search-contacts-container').slideDown();
   });
 
+  $('#btn-search-contacts-submit').on('click', function() {
+    var obj = {};
+    obj.string = $('#search-contacts-string').val();
+    $('#search-contacts-results').empty();
+    $.ajax({
+      url: '/api/contact/search',
+      method: 'post',
+      data: obj,
+      dataType: 'json',
+      success: function(response) {
+        for (i = 0; i < response.length; i++) {
+          $('<div>').text('ID: ' + response[i].id).appendTo('#search-contacts-results');
+          $('<div>').text(response[i].first_name).appendTo('#search-contacts-results');
+          $('<div>').text(response[i].last_name).appendTo('#search-contacts-results');
+          $('<div>').text(response[i].email).appendTo('#search-contacts-results');
+          $('<hr>').appendTo('#search-contacts-results');
+        }
+      }
+    });
+  });
+
 });
