@@ -31,4 +31,14 @@ post '/api/contact/search' do
   array.flatten.uniq.to_json
 end
 
+delete '/api/contact/delete' do
+  response = {}
+  unless Contact.destroy(params["id"].to_i)
+    response["message"] = "Something went wrong."
+  else
+    response["message"] = "Contact has been successfully deleted."
+  end
+  response.to_json
+end
+
 
